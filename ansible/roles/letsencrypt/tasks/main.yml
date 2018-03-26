@@ -1,0 +1,6 @@
+---
+- name: Install letsencrypt
+  apt: name=letsencrypt state=latest
+
+- name: Create letsencrypt directory
+  file: name=/var/www/letsencrypt state=directory

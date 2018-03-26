@@ -1,0 +1,42 @@
+---
+- name: Clone growlerfriday
+  become_user: "{{ user }}"
+  become: true
+  git:
+    repo: "{{ growlerfriday_github_url }}"
+    dest: ~/code/growler-friday
+
+- name: Copy nginx port 80 configuration to sites-available for growlerfriday
+  template:
+    src: templates/growlerfriday-80.conf.j2
+    dest: /etc/nginx/sites-available/growlerfriday-80.conf
+
+- name: Copy nginx port 443 configuration to sites-available for growlerfriday
+  template:
+    src: templates/growlerfriday-443.conf.j2
+    dest: /etc/nginx/sites-available/growlerfriday-443.conf
+
+- name: Create sites-enabled symlink for nginx growlerfriday port 80 configuration
+  file:
+    src: /etc/nginx/sites-available/growlerfriday-80.conf
+    dest: /etc/nginx/sites-enabled/growlerfriday-80.conf
+    state: link
+  notify: restart nginx
+
+- name: Create letsencrypt certificate
+  shell: letsencrypt certonly -n --webroot -w /var/www/letsencrypt -m {{ letsencrypt_email }} --agree-tos -d {{ domain_name }}
+  args:
+    creates: /etc/letsencrypt/live/{{ domain_name }}
+
+- name: Create sites-enabled symlink for nginx growlerfriday port 443 configuration
+  file:
+    src: /etc/nginx/sites-available/growlerfriday-443.conf
+    dest: /etc/nginx/sites-enabled/growlerfriday-443.conf
+    state: link
+  notify: restart nginx
+
+- name: Add letsencrypt cronjob for cert renewal
+  cron:
+    name: letsencrypt_renewal
+    special_time: weekly
+    job: letsencrypt --renew certonly -n --webroot -w /var/www/letsencrypt -m {{ letsencrypt_email }} --agree-tos -d {{ domain_name }} && service nginx reload

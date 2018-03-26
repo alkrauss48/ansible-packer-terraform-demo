@@ -1,0 +1,8 @@
+letsencrypt_email: alkrauss48@gmail.com
+domain_name: growlerfriday.com
+user: vagrant
+
+# You shouldn't need to change this.
+mysql_port: 3306
+
+growlerfriday_github_url: https://github.com/alkrauss48/growler-friday.git

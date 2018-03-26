@@ -1,0 +1,8 @@
+---
+- name: Upgrade system
+  apt: upgrade=dist update_cache=yes
+
+- name: Create code directory
+  file: path=/home/{{ user }} state=directory
+  become_user: "{{ user }}"
+  become: true

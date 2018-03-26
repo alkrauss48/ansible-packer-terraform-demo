@@ -1,0 +1,22 @@
+{
+  "variables": {
+    "digitalocean_api_token" :""
+  },
+  "builders": [
+    {
+      "type": "digitalocean",
+      "ssh_username": "root",
+      "api_token": "{{ user `digitalocean_api_token` }}",
+      "image": "ubuntu-16-04-x64",
+      "region": "nyc1",
+      "size": "s-1vcpu-1gb",
+      "droplet_name": "staging"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "ansible",
+      "playbook_file": "../ansible/site.yml"
+    }
+  ]
+}
