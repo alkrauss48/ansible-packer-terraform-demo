@@ -1,6 +1,6 @@
 letsencrypt_email: alkrauss48@gmail.com
 domain_name: growlerfriday.com
-user: vagrant
+user: root
 
 # You shouldn't need to change this.
 mysql_port: 3306

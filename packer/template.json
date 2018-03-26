@@ -24,10 +24,9 @@
       "role_paths": [
         "../ansible/roles/common",
         "../ansible/roles/git",
-        "../ansible/roles/growlerfriday",
-        "../ansible/roles/letsencrypt",
         "../ansible/roles/mysql",
-        "../ansible/roles/nginx"
+        "../ansible/roles/nginx",
+        "../ansible/roles/growlerfriday"
       ],
       "group_vars": "../ansible/group_vars"
     },

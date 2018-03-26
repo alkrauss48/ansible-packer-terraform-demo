@@ -5,5 +5,5 @@ apt -y remove --purge ansible
 apt-add-repository --remove ppa:ansible/ansible
 
 # Apt cleanup.
-apt autoremove
-apt update
+apt -y autoremove
+apt -y update

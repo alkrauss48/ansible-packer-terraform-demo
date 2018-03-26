@@ -5,7 +5,7 @@
    - mysql-server
 
 - name: Create Mysql configuration file
-  template: src=my.cnf.j2 dest=/etc/my.cnf
+  template: src=templates/my.cnf.j2 dest=/etc/my.cnf
   notify:
   - restart mysql
 
