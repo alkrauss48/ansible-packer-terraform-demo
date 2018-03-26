@@ -1,7 +1,5 @@
 ---
 - name: Clone growlerfriday
-  become_user: "{{ user }}"
-  become: true
   git:
     repo: "{{ growlerfriday_github_url }}"
     dest: ~/code/growler-friday

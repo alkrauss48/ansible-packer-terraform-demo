@@ -1,9 +1,6 @@
 ---
 - name: Install Git, MySQL, Nginx, NodeJS, NPM
   hosts: all
-  become_user: root
-  become_method: sudo
-  become: true
 
   roles:
     - common

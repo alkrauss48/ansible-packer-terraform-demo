@@ -4,5 +4,3 @@
 
 - name: Create code directory
   file: path=/home/{{ user }} state=directory
-  become_user: "{{ user }}"
-  become: true

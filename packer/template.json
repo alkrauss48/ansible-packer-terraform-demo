@@ -1,6 +1,6 @@
 {
   "variables": {
-    "digitalocean_api_token" :""
+    "digitalocean_api_token":""
   },
   "builders": [
     {
@@ -15,8 +15,25 @@
   ],
   "provisioners": [
     {
-      "type": "ansible",
-      "playbook_file": "../ansible/site.yml"
+      "type": "shell",
+      "script": "scripts/ansible.sh"
+    },
+    {
+      "type": "ansible-local",
+      "playbook_file": "../ansible/site.yml",
+      "role_paths": [
+        "../ansible/roles/common",
+        "../ansible/roles/git",
+        "../ansible/roles/growlerfriday",
+        "../ansible/roles/letsencrypt",
+        "../ansible/roles/mysql",
+        "../ansible/roles/nginx"
+      ],
+      "group_vars": "../ansible/group_vars"
+    },
+    {
+      "type": "shell",
+      "script": "scripts/cleanup.sh"
     }
   ]
 }
