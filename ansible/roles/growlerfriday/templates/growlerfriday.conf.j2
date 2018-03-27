@@ -1,12 +1,11 @@
 server {
-  listen 80 default_server;
-  server_name {{ domain_name }};
+  listen 80;
+  server_name growlerfriday.com;
 
-  root /home/{{ user }}/code/growler-friday;
+  root /var/www/html/growler-friday;
   index index.php index.html index.htm;
 
   location / {
     try_files $uri $uri/ /index.html;
   }
 }
-

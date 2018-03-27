@@ -1,3 +1,0 @@
----
-- name: Create code directory
-  file: path=/home/{{ user }}/code state=directory

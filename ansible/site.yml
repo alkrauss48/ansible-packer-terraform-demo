@@ -3,7 +3,6 @@
   hosts: all
 
   roles:
-    - common
     - git
     - mysql
     - nginx

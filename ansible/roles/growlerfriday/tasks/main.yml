@@ -1,8 +1,8 @@
 ---
 - name: Clone growlerfriday
   git:
-    repo: "{{ growlerfriday_github_url }}"
-    dest: ~/code/growler-friday
+    repo: https://github.com/alkrauss48/growler-friday.git
+    dest: /var/www/html/growler-friday
 
 - name: Copy growlerfriday nginx configuration to sites-available
   template:
