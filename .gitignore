@@ -1,2 +1,3 @@
 packer/variables.json
 *.retry
+.env
