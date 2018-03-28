@@ -9,6 +9,11 @@ terraform-plan:
 	terraform plan && \
 	cd -
 
+terraform-apply:
+	cd terraform && \
+	terraform apply && \
+	cd -
+
 packer-build:
 	cd packer && \
 	packer build template.json && \
