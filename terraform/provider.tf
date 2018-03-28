@@ -1,4 +1,4 @@
-variable "do_token" {}
+variable "digital_ocean_api_token" {}
 variable "droplet_image" {
   description = "The Digital Ocean Snapshot ID that was returned from Packer"
 }
@@ -10,5 +10,5 @@ variable "pvt_key" {}
 variable "ssh_fingerprint" {}
 
 provider "digitalocean" {
-  token = "${var.do_token}"
+  token = "${var.digital_ocean_api_token}"
 }
