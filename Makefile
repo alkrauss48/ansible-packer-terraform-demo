@@ -8,6 +8,9 @@ terraform-plan:
 	cd terraform && \
 	terraform plan \
 		-var "do_token=${DIGITAL_OCEAN_API_TOKEN}" \
+		-var "droplet_name=${DROPLET_NAME}" \
+		-var "droplet_region=${DROPLET_REGION}" \
+		-var "droplet_size=${DROPLET_SIZE}" \
 		-var "pub_key=${PUB_KEY}" \
 		-var "pvt_key=${PVT_KEY}" \
 		-var "ssh_fingerprint=${SSH_FINGERPRINT}" && \
@@ -15,5 +18,5 @@ terraform-plan:
 
 packer-build:
 	cd packer && \
-	packer build -var 'digitalocean_api_token=${DIGITAL_OCEAN_API_TOKEN}' -var-file=variables.json template.json && \
+	packer build template.json && \
 	cd -

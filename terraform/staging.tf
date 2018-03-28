@@ -1,8 +1,8 @@
 resource "digitalocean_droplet" "staging" {
-  image = "${var.do_image}"
-  name = "staging"
-  region = "nyc1"
-  size = "s-1vcpu-1gb"
+  image = "${var.droplet_image}"
+  name = "${var.droplet_name}"
+  region = "${var.droplet_region}"
+  size = "${var.droplet_size}"
   private_networking = true
   ssh_keys = [
     "${var.ssh_fingerprint}"
