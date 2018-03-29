@@ -46,7 +46,7 @@ make terraform-apply
 <enter Snapshot ID from packer-build command>
 # This will take about a minute
 
-Done!
+# Done!
 ```
 
 MIT Licensed. [Aaron Krauss](https://thesocietea.org).
