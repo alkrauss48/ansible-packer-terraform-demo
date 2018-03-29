@@ -23,7 +23,7 @@ the created droplet, it will work.
 
 Prior to running, make sure you have both packer and terraform installed.
 
-```
+```bash
 git clone https://github.com/alkrauss48/ansible-packer-terraform-demo.git
 cd ansible-packer-terraform-demo
 
@@ -33,6 +33,9 @@ cd ansible-packer-terraform-demo
 
 make packer-build
 # This will take about 5 minutes. Copy the Snapshot ID you get at the end
+
+make terraform-init
+# Only have to do this once
 
 make terraform-plan
 <enter Snapshot ID from packer-build command>
@@ -46,11 +49,4 @@ make terraform-apply
 Done!
 ```
 
-## Notes
-Before running this the first time, you'll need to init terraform:
-```
-cd terraform
-terraform init
-```
-
-MIT Licensed. Aaron Krauss.
+MIT Licensed. [Aaron Krauss](https://thesocietea.org).
