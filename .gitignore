@@ -2,3 +2,4 @@ packer/variables.json
 *.retry
 .env
 .terraform
+*.tfstate*
