@@ -1,0 +1,40 @@
+Using Terraform, Packer,
+& Ansible Together
+
+By @thecodeboss
+
+@images/clevyr.png
+
+@images/clevyr-labs.png
+
+The Plan
+
+Build a Digital
+Ocean Snapshot
+
+Using Packer
+
+Configured with Ansible
+
+And Then Deploy a
+Digital Ocean Droplet
+
+Using Terraform
+
+@images/mind-blown.png
+
+Demo
+
+To Learn More...
+
+Don't Ask Me
+
+Ansible - Jon Yarbor
+
+Packer - Paul Dawson
+
+Terraform - Clayton / Mike
+
+Thanks
+@thecodeboss
+thesocietea.org
