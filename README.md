@@ -1,6 +1,8 @@
 Ansible, Packer, and Terraform Demo
 ===
 
+## [YouTube Video over this demo](https://www.youtube.com/watch?v=pkEezNSFWtA)
+
 This project combines Ansible, Packer, and Terraform to show how you can
 automagically script and deploy a server with no manual configuration. In case
 you're unfamiliar with these 3 tools:
